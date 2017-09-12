@@ -12,14 +12,14 @@ function stripe_config()
 }
 function stripe_link($params)
 {
-	$invoiceid = $params['invoiceid'];
-	$description = $params["description"];
-  $amount = $params['amount'];
-	$result = mysql_query("SELECT relid, amount, description FROM tblinvoiceitems WHERE type='Hosting' AND invoiceid='" . $invoiceid . "'");
-  $grab_relid = mysql_fetch_row($result);
-  $relid = $grab_relid[0];
-  $subscribe_price = $grab_relid[1];
-  $plan_name = $grab_relid[2];
+      $invoiceid = $params['invoiceid'];
+    	$description = $params["description"];
+      $amount = $params['amount'];
+    	$result = mysql_query("SELECT relid, amount, description FROM tblinvoiceitems WHERE type='Hosting' AND invoiceid='" . $invoiceid . "'");
+      $grab_relid = mysql_fetch_row($result);
+      $relid = $grab_relid[0];
+      $subscribe_price = $grab_relid[1];
+      $plan_name = $grab_relid[2];
 
     if ($relid != 0 || $relid != "")
     {
